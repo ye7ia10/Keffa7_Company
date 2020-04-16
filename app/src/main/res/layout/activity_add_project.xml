@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProject">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/holo_blue_dark"
+        app:titleTextColor="@android:color/white"
+        android:elevation="4dp"
+        android:id="@+id/toolbar"
+        android:textAlignment="center"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    </androidx.appcompat.widget.Toolbar>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/unnamed">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:textSize="16sp"
+        android:hint="Project Name ......"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:id="@+id/projectName"
+        android:maxLines="5"
+        android:padding="10dp">
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add photos of project"
+        android:layout_below="@+id/projectName"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/t"
+        ></TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@+id/t"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/projectName"
+        android:id="@+id/choosePhotos"
+        android:src="@drawable/unnamed2">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:hint="Project Description ......"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:id="@+id/projectDesc"
+        android:maxLines="5"
+        android:layout_below="@+id/t"
+        android:padding="10dp">
+    </EditText>
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Upload Project"
+        android:background="@android:color/holo_blue_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/projectDesc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/uploadProject"
+        android:textAllCaps="false"
+        />
+
+</RelativeLayout>
