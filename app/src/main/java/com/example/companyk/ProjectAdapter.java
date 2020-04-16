@@ -11,6 +11,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHolder>  {
     private Context mContext;
@@ -31,7 +32,11 @@ public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+                Project project = projectList.get(position);
+                holder.projectDesc.setText(project.getPdesc());
+                holder.ProjectName.setText(project.getPname());
+                ViewPagerAdapter adapter = new ViewPagerAdapter(mContext, project.getPhotos());
+                holder.flipper.setAdapter(adapter);
     }
 
     @Override
@@ -41,16 +46,16 @@ public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHol
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        public ViewFlipper flipper;
+        public ViewPager flipper;
         public TextView ProjectName;
-        public  TextView projectDesc;
+        public TextView projectDesc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mContext=itemView.getContext();
             flipper = itemView.findViewById(R.id.viewFlipper);
             projectDesc = itemView.findViewById(R.id.desc);
-            projectDesc = itemView.findViewById(R.id.PNameRe);
+            ProjectName = itemView.findViewById(R.id.PNameRe);
         }
     }
 }
