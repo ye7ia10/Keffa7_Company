@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".comp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_weight="4"
+            android:src="@drawable/ic_login"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:text="Ask Us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+        android:textColor="#fff"
+        android:textColorHint="#eee"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:hint="Name"
+            android:id="@+id/name"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:textSize="17sp" />
+
+        <EditText
+            android:textColor="#fff"
+            android:textColorHint="#eee"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:hint="Phone"
+            android:id="@+id/phone"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:textSize="17sp" />
+
+
+        <EditText
+            android:textColor="#fff"
+            android:textColorHint="#eee"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:hint="Your  Question"
+            android:id="@+id/asks"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:maxLines="5"
+            android:textSize="17sp" />
+        <Button
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:text="Submit"
+            android:textColor="#777"
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:background="@android:color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:layout_height="35dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

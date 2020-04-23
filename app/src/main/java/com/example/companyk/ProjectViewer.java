@@ -2,11 +2,17 @@ package com.example.companyk;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,13 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ProjectViewer extends AppCompatActivity {
+public class ProjectViewer extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private DatabaseReference reference;
     private ArrayList<Project> projects;
     private ProjectAdapter projectAdapter;
+    private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +37,21 @@ public class ProjectViewer extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Our Projects");
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
+        imageView = (ImageView) findViewById(R.id.menu);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(ProjectViewer.this, view);
+                popup.setOnMenuItemClickListener(ProjectViewer.this);
+                popup.inflate(R.menu.popup_menu);
+                popup.show();
+            }
+        });
         projects = new ArrayList<>();
         reference = FirebaseDatabase.getInstance().getReference().child("Projects");
 
@@ -42,6 +60,20 @@ public class ProjectViewer extends AppCompatActivity {
 
         getProjects();
 
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.ask:
+                startActivity(new Intent(ProjectViewer.this, comp.class));
+                return true;
+            case R.id.about:
+                return  true;
+            default:
+                return false;
+        }
     }
 
 
