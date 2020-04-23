@@ -35,7 +35,6 @@ public class ProjectViewer extends AppCompatActivity implements PopupMenu.OnMenu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_viewer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Our Projects");
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         imageView = (ImageView) findViewById(R.id.menu);
         recyclerView.setHasFixedSize(true);

@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class comp extends AppCompatActivity {
@@ -57,7 +59,12 @@ public class comp extends AppCompatActivity {
             progressDialog.show();
             map.put("name", name.getText().toString());
             map.put("phone", phone.getText().toString());
-            map.put("phone", ask.getText().toString());
+            map.put("ask", ask.getText().toString());
+            Date date = new Date();
+            Date newDate = new Date(date.getTime());
+            SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
+            String stringdate = dt.format(newDate);
+            map.put("date", String.valueOf(stringdate.toString()));
             reference.push().setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {

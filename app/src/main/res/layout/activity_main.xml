@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/b">
+    android:background="@drawable/aann">
 
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_width="223dp"
         android:layout_height="214dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="160dp"
         android:src="@drawable/logo" />
 
     <Button
@@ -32,13 +32,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@android:color/holo_green_dark"
         android:text="User"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/inUser"
         ></Button>
 
@@ -53,7 +53,7 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/inAdmin"
         ></Button>
 

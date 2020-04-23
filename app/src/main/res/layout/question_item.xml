@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_margin="2dp"
+    android:layout_height="wrap_content">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_marginTop="2dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:text="Name : "
+              android:id="@+id/t2"
+              ></TextView>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:textStyle="bold"
+              android:id="@+id/textname"
+              android:layout_marginStart="3dp"
+              ></TextView>
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginBottom="6dp"
+          android:background="#E6E6E6"/>
+
+      <LinearLayout
+          android:layout_marginTop="2dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:text="Phone : "
+              ></TextView>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:textStyle="bold"
+              android:id="@+id/textphone"
+              android:layout_marginStart="3dp"
+              ></TextView>
+      </LinearLayout>
+
+
+
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginBottom="6dp"
+          android:background="#E6E6E6"/>
+
+      <LinearLayout
+          android:layout_marginTop="2dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:text="Date : "
+              ></TextView>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:textStyle="bold"
+              android:id="@+id/textDate"
+              android:layout_marginStart="3dp"
+              ></TextView>
+      </LinearLayout>
+
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginBottom="6dp"
+          android:background="#E6E6E6"/>
+
+      <LinearLayout
+          android:layout_marginTop="2dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:text="Question : "
+              ></TextView>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textColor="@android:color/black"
+              android:textStyle="bold"
+              android:id="@+id/ques"
+              android:layout_marginStart="3dp"
+              android:maxLines="5"
+              ></TextView>
+      </LinearLayout>
+
+
+
+  </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
