@@ -64,8 +64,10 @@ public class comp extends AppCompatActivity {
             Date newDate = new Date(date.getTime());
             SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
             String stringdate = dt.format(newDate);
+            String pushKey = reference.push().getKey();
+            map.put("key", pushKey);
             map.put("date", String.valueOf(stringdate.toString()));
-            reference.push().setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+            reference.child(pushKey).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Toast.makeText(comp.this, "Your Question Uploaded Successfully", Toast.LENGTH_SHORT).show();

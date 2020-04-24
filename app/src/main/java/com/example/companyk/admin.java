@@ -34,5 +34,12 @@ public class admin extends AppCompatActivity {
             }
         });
 
+        Ans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(admin.this, adminQuestions.class));
+            }
+        });
+
     }
 }

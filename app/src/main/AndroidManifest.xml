@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".comp"></activity>
+        <activity android:name=".adminQuestions"></activity>
+        <activity android:name=".comp" />
         <activity android:name=".ProjectViewer" />
         <activity android:name=".AddProject" />
         <activity android:name=".admin" />
