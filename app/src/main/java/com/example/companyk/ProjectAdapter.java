@@ -12,6 +12,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+import me.relex.circleindicator.CircleIndicator;
 
 public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHolder>  {
     private Context mContext;
@@ -37,6 +38,7 @@ public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHol
                 holder.ProjectName.setText(project.getPname());
                 ViewPagerAdapter adapter = new ViewPagerAdapter(mContext, project.getPhotos());
                 holder.flipper.setAdapter(adapter);
+                holder.indicator.setViewPager(holder.flipper);
     }
 
     @Override
@@ -49,6 +51,7 @@ public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHol
         public ViewPager flipper;
         public TextView ProjectName;
         public TextView projectDesc;
+        public CircleIndicator indicator;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +59,7 @@ public class ProjectAdapter  extends RecyclerView.Adapter<ProjectAdapter.ViewHol
             flipper = itemView.findViewById(R.id.viewFlipper);
             projectDesc = itemView.findViewById(R.id.desc);
             ProjectName = itemView.findViewById(R.id.PNameRe);
+            indicator = itemView.findViewById(R.id.indicator);
         }
     }
 }
