@@ -28,6 +28,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+import com.sangcomz.fishbun.FishBun;
+import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +50,8 @@ public class AddProject extends AppCompatActivity {
     private HashMap<String, String> projectData = new HashMap<>();
     private StorageTask task;
     private int i = 0;
+    private ArrayList<Uri> path = new ArrayList<>();
+    private CircleImageView ddd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,8 @@ public class AddProject extends AppCompatActivity {
         pname = (EditText) findViewById(R.id.projectName);
         pdesc = (EditText) findViewById(R.id.projectDesc);
         addPhotos = (CircleImageView) findViewById(R.id.choosePhotos);
+        ddd = (CircleImageView) findViewById(R.id.ddd);
+
         upload = (Button) findViewById(R.id.uploadProject);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait while uploading the project .... ");
@@ -131,29 +138,32 @@ public class AddProject extends AppCompatActivity {
     }
 
     private void choosePhotos() {
-        Intent intent = new Intent();
+       /* Intent intent = new Intent();
         intent.setType("image/*");
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Picture"), PICK_IMAGE);
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"), PICK_IMAGE);*/
+       // new GligarPicker().requestCode(PICK_IMAGE).withActivity(this).show();
+
+        FishBun.with(this).setImageAdapter(new GlideAdapter()).startAlbum();
+
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(AddProject.this, resultCode + data.getClipData().toString(), Toast.LENGTH_SHORT).show();
-        if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data.getClipData() != null){
-                int count = data.getClipData().getItemCount();
-                int idx = 0;
-                while (idx < count){
-                    currenImageUri = data.getClipData().getItemAt(idx).getUri();
-                    Toast.makeText(AddProject.this, "You have selected " + count + "photos successfully", Toast.LENGTH_SHORT).show();
-                    photosuUri.add(currenImageUri);
-                    idx++;
+        switch (requestCode) {
+            case FishBun.FISHBUN_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    // path = imageData.getStringArrayListExtra(Define.INTENT_PATH);
+                    // you can get an image path(ArrayList<String>) on <0.6.2
+
+                    photosuUri = data.getParcelableArrayListExtra(FishBun.INTENT_PATH);
+                   // ddd.setImageURI(path.get(0));
+                    // you can get an image path(ArrayList<Uri>) on 0.6.2 and later
+                    break;
                 }
-            Toast.makeText(AddProject.this, "You have selected " + count + "photos successfully", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(AddProject.this, "Error in selecting photos", Toast.LENGTH_SHORT).show();
         }
     }
 }

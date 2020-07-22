@@ -23,6 +23,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
+        android:id="@+id/ddd"
         android:layout_marginTop="75dp"
         android:src="@drawable/unnamed">
     </de.hdodenhof.circleimageview.CircleImageView>
